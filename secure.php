@@ -19,7 +19,7 @@
 
         public function work()
         {
-            require "../ubiq-php/src/Ubiq.php";
+            require realpath(dirname(__FILE__) . '/../ubiq-php/src/Ubiq.php');
 
             $credentials = new Ubiq\Credentials();
             $credentials->load('ubiq.credentials');
