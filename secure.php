@@ -24,9 +24,9 @@
             $credentials = new Ubiq\Credentials();
             $credentials->load('ubiq.credentials');
 
-            echo date('Y-m-d H:i:s) . ' Library loaded' . PHP_EOL;
+            echo date('Y-m-d H:i:s') . ' Library loaded' . PHP_EOL;
 
-            echo date('Y-m-d H:i:s) . ' Creating temporary data ' . PHP_EOL;
+            echo date('Y-m-d H:i:s') . ' Creating temporary data ' . PHP_EOL;
 
             $string = '';
 
@@ -34,22 +34,22 @@
                 $string .= self::randomString(self::TEMP_FILE_CHAR_SET_SIZE);
             }
 
-            echo date('Y-m-d H:i:s) . ' Created temporary data ' . number_format(strlen($string)/1024/1024, 2) . ' mb' . PHP_EOL;
+            echo date('Y-m-d H:i:s') . ' Created temporary data ' . number_format(strlen($string)/1024/1024, 2) . ' mb' . PHP_EOL;
 
-            echo date('Y-m-d H:i:s) . ' Encrypting data ' . PHP_EOL;
+            echo date('Y-m-d H:i:s') . ' Encrypting data ' . PHP_EOL;
 
             $encrypted = Ubiq\encrypt($credentials, $string);
 
 
-            echo date('Y-m-d H:i:s) . ' Encrypted data ' . number_format(strlen($encrypted)/1024/1024, 2) . ' mb' . PHP_EOL;
+            echo date('Y-m-d H:i:s') . ' Encrypted data ' . number_format(strlen($encrypted)/1024/1024, 2) . ' mb' . PHP_EOL;
 
-            echo date('Y-m-d H:i:s) . ' Decrypting temporary data' . PHP_EOL;
+            echo date('Y-m-d H:i:s') . ' Decrypting temporary data' . PHP_EOL;
 
             $decrypted = Ubiq\decrypt($credentials, $encrypted);
 
-            echo date('Y-m-d H:i:s) . ' Encrypted data ' . number_format(strlen($decrypted)/1024/1024, 2) . ' mb' . PHP_EOL;
+            echo date('Y-m-d H:i:s') . ' Encrypted data ' . number_format(strlen($decrypted)/1024/1024, 2) . ' mb' . PHP_EOL;
 
-            echo date('Y-m-d H:i:s) . ' Decrypted matches original ' . ($string === $decrypted ? 'YES' : 'NO') . PHP_EOL;
+            echo date('Y-m-d H:i:s') . ' Decrypted matches original ' . ($string === $decrypted ? 'YES' : 'NO') . PHP_EOL;
         }
     }
 
