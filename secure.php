@@ -22,7 +22,7 @@
             require realpath(dirname(__FILE__) . '/../ubiq-php/src/Ubiq.php');
 
             $credentials = new Ubiq\Credentials();
-            $credentials->load('ubiq.credentials');
+            credentials->load(realpath(dirname(__FILE__) . '/ubiq.credentials'));
 
             echo date('Y-m-d H:i:s') . ' Library loaded' . PHP_EOL;
 
